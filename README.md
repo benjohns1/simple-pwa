@@ -1,8 +1,8 @@
 # Simple PWA
-Simple PWA app from [this tutorial](https://medium.com/james-johnson/a-simple-progressive-web-app-tutorial-f9708e5f2605).
+Simple PWA sample from [this tutorial](https://medium.com/james-johnson/a-simple-progressive-web-app-tutorial-f9708e5f2605).
 
 ## Install
-`npm ci`
+`npm i`
 
 ## Run
 `npm start`
