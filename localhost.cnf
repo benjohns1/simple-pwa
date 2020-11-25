@@ -1,0 +1,21 @@
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+x509_extensions = v3_req
+distinguished_name = dn
+
+[dn]
+C = US
+ST = State
+L = City
+O = Org
+emailAddress = email@127.0.0.1
+CN = 127.0.0.1
+
+[v3_req]
+subjectAltName = @alt_names
+
+[alt_names]
+DNS = localhost
+IP = 127.0.0.1

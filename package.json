@@ -1,0 +1,35 @@
+{
+  "name": "simple-pwa",
+  "version": "1.0.0",
+  "description": "Simple PWA app from [this tutorial](https://medium.com/james-johnson/a-simple-progressive-web-app-tutorial-f9708e5f2605).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lighthouse": "npm-run-all --parallel \"serve -- --port 9091\" \"lighthouse:run -- http://localhost:9091\"",
+    "lighthouse:ssl": "npm-run-all --parallel  serve:redirect \"serve -- --port 443 --cert cert.pem --key key.pem --rewrite \"\"http -> https\"\"\" \"lighthouse:run -- https://127.0.0.1\"",
+    "lighthouse:run": "npm-run-all --sequential lighthouse:mkdir \"lighthouse:report -- {@}\" --",
+    "lighthouse:mkdir": "mkdirp ./lighthouse",
+    "lighthouse:report": "lighthouse --output-path ./lighthouse/report.html",
+    "serve": "ws --directory ./public",
+    "serve:redirect": "ws --port 80 --stack lws-redirect --redirect \"http -> https\"",
+    "start": "npm-run-all \"serve --port 9090\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benjohns1/simple-pwa.git"
+  },
+  "author": "Ben Johns <benjohns1@gmail.com> (bennyjohns.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benjohns1/simple-pwa/issues"
+  },
+  "homepage": "https://github.com/benjohns1/simple-pwa#readme",
+  "devDependencies": {
+    "http-server": "^0.12.3",
+    "lighthouse": "^6.4.1",
+    "local-web-server": "^4.2.1",
+    "lws-redirect": "^2.1.2",
+    "mkdirp": "^1.0.4",
+    "npm-run-all": "^4.1.5"
+  }
+}
