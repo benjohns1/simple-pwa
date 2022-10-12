@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/benjohns1/simple-pwa#readme",
   "devDependencies": {
-    "lighthouse": "^6.4.1",
+    "lighthouse": "^9.6.7",
     "local-web-server": "^4.2.1",
     "lws-redirect": "^2.1.2",
     "mkdirp": "^1.0.4",
